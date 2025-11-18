@@ -18,11 +18,11 @@ app.use(express.json());
 // Wrap DB connection and server start in async function
 const startServer = async () => {
   try {
-    await connectDB(); // connect to MongoDB
+    await connectDB();  // connect to MongoDB
     console.log('Database connected successfully');
 
     // Routes
-    app.use('/api/user', userRouter);
+    app.use('/api/user', userRouter); // User routes
     app.use('/api/image', imageRouter);
     app.get('/', (req, res) => {
       res.send('Hello World!');
@@ -36,6 +36,6 @@ const startServer = async () => {
     console.error('Failed to start server:', error);
     process.exit(1); // exit if DB connection fails
   }
-};
+};  
 
 startServer();

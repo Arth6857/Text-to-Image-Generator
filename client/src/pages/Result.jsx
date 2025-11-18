@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useContext} from 'react'
 import { assets } from '../assets/assets'
 import { motion } from 'motion/react'
-import { Appcontext } from '../context/Appcontext';
+import { Appcontext } from "../context/Appcontext.jsx";
+
+
 
 const Result = () => {
   const [image, setImage] = useState(assets.sample_img_1);
@@ -9,8 +11,10 @@ const Result = () => {
   const [loading, setLoading] = useState(true);
   const[input, setInput] = useState("");
 
-  const {generateImage}=useContext(Appcontext)
+  //importing the generate image function from context
+  const {generateImage} =useContext(Appcontext)
 
+  //whenever we enter the prompt and click on generate button 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     setLoading(true)
@@ -18,10 +22,11 @@ const Result = () => {
     if(input){
       const image = await generateImage(input) 
       if(image){
-        setIsImageLoaded(true) //
+        setIsImageLoaded(true) 
         setImage(image);
       }
     }
+    //disable the loading
     setLoading(false)
   };
 

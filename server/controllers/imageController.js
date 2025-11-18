@@ -2,6 +2,8 @@ import userModel from "../models/userModel.js";
 import FormData from "form-data";
 import axios from "axios";
 
+
+//we will send the userId from the token in the middleware and that will be used here
 const generateImage=async(req,res)=>{
     try{
         // const {userId,prompt}=req.body;
@@ -17,6 +19,7 @@ const generateImage=async(req,res)=>{
         if(user.creditBalance<=0){
             return res.json({success: false, message: 'Insufficient credits'})
         } 
+         
         //call the clipdrop api to generate image
         const formData=new FormData();
         formData.append('prompt',prompt);

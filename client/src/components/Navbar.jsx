@@ -21,14 +21,14 @@ const Navbar = () => {
                 <button onClick={()=>navigate('/buy')} className="flex items-center gap-2 bg-zinc-800 text-white px-7 py-2 sm:px-10 text-sm rounded-full
                 hover:scale-105 transition-all duration-700 ease-in-out">
                 <img className="w-5" src={assets.credit_star} alt="credits" />
-                <p className="text-xs sm:text-sm font-medium text-white-800">Credits left: {credit}</p>
+                <p className="text-xs sm:text-sm font-medium text-white">Credits left: {credit ?? "…"}</p>
               </button>
               <p className="text-gray-600 max-sm:hidden pl-4">Hi,{user.name}</p>
               <div className="relative group">
                 <img src={assets.profile_icon} className="w-10 drop-shadow" alt="/"></img>
                 <div className='absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12'>
                   <ul className='list-none m-0 p-2 bg-white rounded-md border text-sm'>
-                    <li onClick={logout } className='py-1 px-2 cursor-pointer pr-2'> Logout</li>
+                    <li onClick={logout} className='py-1 px-2 cursor-pointer pr-2'> Logout</li>
                   </ul>
                 </div>
               </div>
