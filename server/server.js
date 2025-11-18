@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import connectDB from './config/mongodb.js';
 import dotenv from 'dotenv';
-import userRouter from './routes/userroutes.js';
+import userRouter from './routes/userRoutes.js';
 import imageRouter from './routes/imageRoute.js';
 
 dotenv.config(); // must come before process.env is used
